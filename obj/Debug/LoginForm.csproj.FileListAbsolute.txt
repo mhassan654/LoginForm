@@ -20,3 +20,8 @@ D:\LEARNING CENTER\C#\LoginForm\obj\Debug\LoginForm.exe.manifest
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\LoginForm.application
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\LoginForm.exe
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\LoginForm.pdb
+D:\LEARNING CENTER\C#\LoginForm\obj\Debug\CustomControls\BindablePasswordBox.g.cs
+D:\LEARNING CENTER\C#\LoginForm\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\LEARNING CENTER\C#\LoginForm\obj\Debug\CustomControls\BindablePasswordBox.baml
+D:\LEARNING CENTER\C#\LoginForm\obj\Debug\MainView.g.cs
+D:\LEARNING CENTER\C#\LoginForm\obj\Debug\MainView.baml

@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:LoginForm.Views"
+        xmlns:viewModel="clr-namespace:LoginForm.ViewModels" xmlns:customcontrols="clr-namespace:LoginForm.CustomControls"
         mc:Ignorable="d"
         Title="LoginView" Height="550" Width="800"
         WindowStyle="None"
@@ -12,6 +13,18 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
+    
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"></BooleanToVisibilityConverter>
+    </Window.Resources>
+    
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
     
     <Border CornerRadius="10">
         <Border.Background>
@@ -125,7 +138,7 @@
                 </Grid>
                 
                 <StackPanel Width="250"
-                            Grid.Row="2"
+                            Grid.Row="1"
                             Orientation="Vertical"
                             Margin="0,35,0,0">
                     <Image Source="/Images2/logo.png"
@@ -159,7 +172,8 @@
                                Margin="0,35,0,0"/>
                     
                     <!-- username text input -->
-                    <TextBox x:Name="txtUser"
+                    <TextBox x:Name="TxtUser"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"
@@ -189,29 +203,24 @@
                                Margin="0,10,0,0"/>
                     
                     <!-- username text input -->
-                    <PasswordBox x:Name="txtPassword"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"
-                             Foreground="White"
-                             CaretBrush="DarkGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,1"
+                    <customcontrols:BindablePasswordBox 
+                        Password="{Binding Password,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        
                              Height="28"
-                             VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="20,0,0,0"
                     >
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Images2/key-icon2.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"
-                            />
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                    </customcontrols:BindablePasswordBox>
 
+                    <TextBlock Text="{Binding ErrorMessage}"
+                           Foreground="#D7596D"
+                           FontSize="13"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           Margin="0,10,0,0"
+                               TextWrapping="Wrap"/>
                     
                     <Button x:Name="BtnLogin"
+                            Command="{Binding LoginCommand}"
                          Background="#462AD8"
                          BorderThickness="0"
                          FontSize="12"
@@ -220,8 +229,7 @@
                          FontFamily="Montserrat"
                          Cursor="Hand"
                          Grid.Column="2"
-                            Margin="0,50,0,0"
-                         Click="btnLogin_Click">
+                            Margin="0,30,0,0">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#462AD8"/>

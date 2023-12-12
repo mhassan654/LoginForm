@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\LEARNING CENTER\C#\LoginForm\App.xaml
-2-1943055891
+41182036683
 1-600760770
-6402817553
-9-1753732648
-MainWindow.xaml;Views\LoginView.xaml;
+16-409683050
+101259637638
+CustomControls\BindablePasswordBox.xaml;MainView.xaml;MainWindow.xaml;Views\LoginView.xaml;
 
-True
+False
 

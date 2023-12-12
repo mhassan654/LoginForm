@@ -42,33 +42,33 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LoginForm.exe" size="748968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LoginForm.exe" size="761768">
       <assemblyIdentity name="LoginForm" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gfQi1WAvrGD7l/3qEoTzyb/q/7qxyhNQFWOh9/tyhtM=</dsig:DigestValue>
+        <dsig:DigestValue>55zbaArVpA2snosDrEFaVpfOgHMSZmsvPCysERDoaxw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name=".gitignore" size="8">
+  <file name=".gitignore" size="15">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>CU7xnZoEJ9Bh8niVtxpQDbdnH4UPLq+xml1PEN0Eth8=</dsig:DigestValue>
+      <dsig:DigestValue>Dr+T6cJKchkC9we7C4kJhFSuUf6Y3B2UWTuzXl/OxNQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="LoginForm.exe.config" size="187">
+  <file name="LoginForm.exe.config" size="561">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+CM46OnHRrXZXNLMx7+U3V3iubiYL//d8hGOR13lDhU=</dsig:DigestValue>
+      <dsig:DigestValue>yH1n/xHuhTGRL+UW9RegucfKjMmFPGm5R0wDZAwJX5I=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
