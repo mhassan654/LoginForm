@@ -1,6 +1,6 @@
 ﻿namespace LoginForm.ViewModels
 {
-    public class SettingsViewModel
+    public class SettingsViewModel: ViewModelBase
     {
         
     }

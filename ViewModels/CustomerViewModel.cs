@@ -1,6 +1,6 @@
 ﻿namespace LoginForm.ViewModels
 {
-    public class CustomerViewModel
+    public class CustomerViewModel: ViewModelBase
     {
         
     }
