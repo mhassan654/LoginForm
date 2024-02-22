@@ -162,8 +162,8 @@
             <Border CornerRadius="0,10,10,0" Grid.Column="1">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
-                        <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+                        <GradientStop Color="{StaticResource primaryBackColor3}" Offset="0"/>
+                        <GradientStop Color="{StaticResource primaryBackColor3}" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 
@@ -228,10 +228,10 @@
                                     VerticalAlignment="Center">
                             <fa:IconImage Icon="{Binding Icon}" Height="20"
                                           Width="20"
-                                          Foreground="{StaticResource titleColor2}"
+                                          Foreground="{StaticResource panelColor}"
                                           Margin="35,0,10,0"/>
                             <TextBlock Text="{Binding Caption}" 
-                                       Foreground="{StaticResource titleColor2}"
+                                       Foreground="{StaticResource panelColor}"
                                        FontSize="16"
                                        FontFamily="Montserrat"
                                        VerticalAlignment="Center"/>
@@ -250,7 +250,7 @@
                             </Button>
                             
                             <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
-                                       Foreground="{StaticResource titleColor3}"
+                                       Foreground="{StaticResource titleColor4}"
                                        FontFamily="Montserrat"
                                        FontSize="12"
                                        VerticalAlignment="Center"/>
@@ -265,19 +265,19 @@
                             </Ellipse>
                             
                             <Button Style="{StaticResource IconButtonIcon}"
-                                    Tag="{StaticResource color3}">
+                                    Tag="{StaticResource color11}">
                                 <fa:IconImage Icon="Clock"
                                               Style="{StaticResource ButtonIcon}"/>
                             </Button>
                             
                             <Button Style="{StaticResource IconButtonIcon}"
-                                    Tag="{StaticResource color3}">
+                                    Tag="{StaticResource color11}">
                                 <fa:IconImage Icon="Envelope"
                                               Style="{StaticResource ButtonIcon}"/>
                             </Button>
                             
                             <Button Style="{StaticResource IconButtonIcon}"
-                                    Tag="{StaticResource color3}">
+                                    Tag="{StaticResource color11}">
                                 <fa:IconImage Icon="Bell"
                                               Style="{StaticResource ButtonIcon}"/>
                             </Button>

@@ -5,9 +5,16 @@ D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LoginForm.exe
 D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LoginForm.pdb
 D:\LEARNING CENTER\C#\LoginForm\bin\Debug\FontAwesome.Sharp.dll
 D:\LEARNING CENTER\C#\LoginForm\bin\Debug\FontAwesome.WPF.dll
+D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LiveCharts.dll
+D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LiveCharts.Wpf.dll
 D:\LEARNING CENTER\C#\LoginForm\bin\Debug\FontAwesome.WPF.xml
+D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LiveCharts.pdb
+D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LiveCharts.xml
+D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LiveCharts.Wpf.pdb
+D:\LEARNING CENTER\C#\LoginForm\bin\Debug\LiveCharts.Wpf.xml
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\LoginForm.csproj.AssemblyReference.cache
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\Styles\Buttons.baml
+D:\LEARNING CENTER\C#\LoginForm\obj\Debug\Styles\Texts.baml
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\Styles\UIColors.baml
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\CustomControls\BindablePasswordBox.g.cs
 D:\LEARNING CENTER\C#\LoginForm\obj\Debug\CustomControls\InfoCard.g.cs

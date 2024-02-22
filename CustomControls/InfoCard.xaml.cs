@@ -69,7 +69,7 @@ namespace LoginForm.CustomControls
             set => SetValue(BackgroundProperty2, value);
         }
 
-        public new static readonly DependencyProperty BackgroundProperty2 =
+        public static readonly DependencyProperty BackgroundProperty2 =
             DependencyProperty.Register("Background2", typeof(Color), typeof(InfoCard));
         
         public Color EllipseBackground1
@@ -78,7 +78,7 @@ namespace LoginForm.CustomControls
             set => SetValue(EllipseBackgroundProperty1, value);
         }
 
-        public new static readonly DependencyProperty EllipseBackgroundProperty1 =
+        public static readonly DependencyProperty EllipseBackgroundProperty1 =
             DependencyProperty.Register("EllipseBackground1", typeof(Color), typeof(InfoCard));
         
         public Color EllipseBackground2
@@ -87,7 +87,7 @@ namespace LoginForm.CustomControls
             set => SetValue(EllipseBackgroundProperty2, value);
         }
 
-        public new static readonly DependencyProperty EllipseBackgroundProperty2 =
+        public static readonly DependencyProperty EllipseBackgroundProperty2 =
             DependencyProperty.Register("EllipseBackground2", typeof(Color), typeof(InfoCard));
     }
 }

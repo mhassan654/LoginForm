@@ -4,13 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:fa='http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp'
-             xmlns:lvc='clr-namespace:LiveCharts;assembly=LiveCharts.Wpf'
-             xmlns:local="clr-namespace:LoginForm.Views"
              xmlns:uc="clr-namespace:LoginForm.CustomControls"
              xmlns:wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Border Background="{StaticResource primaryBackground2}" CornerRadius="10" Padding="10">
+    <Border Background="{StaticResource primaryBackground3}" CornerRadius="10" Padding="10">
         <Grid>
        
         <Grid.RowDefinitions>

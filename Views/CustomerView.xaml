@@ -20,26 +20,36 @@
                     <ColumnDefinition Width="120"/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Top"
-                        Grid.Column="0">
-                    <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
+                    <StackPanel Orientation="Horizontal"
+        VerticalAlignment="Top" 
+        Grid.Column="0">
+                        
+                        <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
 
-                    <TextBox Text="Search..."   
-                    FontSize="13"
-                         Height="24"
-                           Width="300"
-                           Background="Transparent"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="{StaticResource plainTextColor3}"
-                             CaretBrush="{StaticResource plainTextColor3}"
-                             BorderBrush="{StaticResource plainTextColor3}"
-                             BorderThickness="0,0,0,1"                             
-                             VerticalContentAlignment="Center"
-                             Margin="5,5,0,0"></TextBox>
+                        <TextBox Text="Search..."   
+                                    FontSize="13"
+                                         Height="24"
+                                           Width="300"
+                                           Background="Transparent"
+                                             FontWeight="Medium"
+                                             FontFamily="Montserrat"                            
+                                             Foreground="{StaticResource plainTextColor3}"
+                                             CaretBrush="{StaticResource plainTextColor3}"
+                                             BorderBrush="{StaticResource plainTextColor3}"
+                                             BorderThickness="0,0,0,1"    
+             
+                                             VerticalContentAlignment="Center"
+                                             Margin="5,5,0,0">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Background" Value="{StaticResource color2}"/>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
 
-                </StackPanel>
+                    </StackPanel>
+             
+                
 
                 <Button Grid.Column="1"
                             Command="{Binding LoginCommand}"                            
@@ -83,7 +93,7 @@
                 Padding="10">
 
                 <DataGrid ColumnWidth="*"
-                  Background="#200F53"
+                  Background="{StaticResource primaryBackground2}"
                   BorderThickness="0">
 
                     <DataGrid.ColumnHeaderStyle>
