@@ -17,7 +17,7 @@
         </Border.Background>
         
         <Border.Clip>
-            <RectangleGeometry RadiusX="15" RadiusY="15" Rect="0,0,291,140"/>
+            <RectangleGeometry RadiusX="6" RadiusY="6" Rect="0,0,291,140"/>
         </Border.Clip>
         
         <Grid>
@@ -35,9 +35,9 @@
                           VerticalAlignment="Center"/>
             
             <StackPanel Margin="35 0 0 20" VerticalAlignment="Bottom">
-                <TextBlock Text="{Binding Path=Title, ElementName=DashboardCard}" Foreground="#E9E9E9E9" FontSize="14"
+                <TextBlock Text="{Binding Path=Title, ElementName=DashboardCard}" Foreground="#E9E9E9E9" FontSize="25"
                            FontFamily="Montserrat"/>
-                <TextBlock Text="{Binding Path=Number, ElementName=DashboardCard}" Foreground="#FFFFFF" FontSize="28"
+                <TextBlock Text="{Binding Path=Number, ElementName=DashboardCard}" Foreground="#FFFFFF" FontSize="20"
                            FontWeight="SemiBold" FontFamily="Montserrat"/>
             </StackPanel>
         </Grid>

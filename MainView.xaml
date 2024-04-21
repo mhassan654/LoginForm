@@ -87,43 +87,28 @@
                         Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Users" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Customers" Style="{StaticResource MenuButtonText}"/>
+                            <TextBlock Text="Product" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                     
+                    <!-- purchase -->
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}"
+                        Command="{Binding ShowCustomerViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="CreditCard" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Purchase" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    <!-- sale -->
                     <RadioButton 
                         Style="{StaticResource MenuButton}" 
                         Tag="{StaticResource color3}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="ShuttleVan" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Order" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="CartShopping" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Transactions" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Box" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Stock" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Home" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Dashboard" Style="{StaticResource MenuButtonText}"/>
+                            <fa:IconImage Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Sale" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                     
@@ -132,7 +117,7 @@
                         Tag="{StaticResource color3}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Wallet" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Financial" Style="{StaticResource MenuButtonText}"/>
+                            <TextBlock Text="Expense" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                     
@@ -140,8 +125,19 @@
                         Style="{StaticResource MenuButton}" 
                         Tag="{StaticResource color3}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="ChartPie" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Reoprt" Style="{StaticResource MenuButtonText}"/>
+                            <fa:IconImage Icon="FileAlt" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Quotation" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    
+                    
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Share" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Transfer" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                     
@@ -149,7 +145,56 @@
                         Style="{StaticResource MenuButton}" 
                         Tag="{StaticResource color3}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Tools" Style="{StaticResource MenuButtonIcon}"/>
+                            <fa:IconImage Icon="Reply" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Return" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Briefcase" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Accounting" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    <!-- //hrm -->
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Users" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="HRM" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    <!-- people -->
+                    
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="User" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="People" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    <!-- reports -->
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="File" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock Text="Reports" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <!-- settings -->
+                    <RadioButton 
+                        Style="{StaticResource MenuButton}" 
+                        Tag="{StaticResource color3}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Cog" Style="{StaticResource MenuButtonIcon}"/>
                             <TextBlock Text="Settings" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
