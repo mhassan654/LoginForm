@@ -81,14 +81,17 @@
                         </StackPanel>
                     </RadioButton>
                     
+                    <!-- product -->
                     <RadioButton 
                         Style="{StaticResource MenuButton}" 
                         Tag="{StaticResource color3}"
                         Command="{Binding ShowCustomerViewCommand}">
+                        
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Users" Style="{StaticResource MenuButtonIcon}"/>
                             <TextBlock Text="Product" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
+                        
                     </RadioButton>
                     
                     <!-- purchase -->
@@ -112,6 +115,7 @@
                         </StackPanel>
                     </RadioButton>
                     
+                    <!-- expenses -->
                     <RadioButton 
                         Style="{StaticResource MenuButton}" 
                         Tag="{StaticResource color3}">
