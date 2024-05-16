@@ -3,10 +3,360 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              xmlns:local="clr-namespace:LoginForm.Views"
+             xmlns:customComponents="clr-namespace:LoginForm.CustomControls"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        
-    </Grid>
+             d:DesignHeight="1000" d:DesignWidth="1200">
+    
+    <Border Background="{StaticResource primaryBackground5}" CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="800"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Background="White" Grid.Column="0" Height="700" MinHeight="600" CornerRadius="12" Margin="10">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Background="White" >
+                                <Grid Margin="6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="50"/>
+                                    </Grid.RowDefinitions>
+
+                                    <DatePicker Grid.Column="0" Grid.Row="0"/>
+                                    <customComponents:MyTextBox Grid.Column="1" Grid.Row="0" Hint="Type reference number" Caption="Referrence number"/>
+                                    <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="2" Grid.Row="0"/>
+                                    <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="0" Grid.Row="1"/>
+                                    <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="1" Grid.Row="1"/>
+
+
+                                    <!--<ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="0" Grid.Row="1" Margin="0,4"/>-->
+
+                                    <!--<ComboBox Height="30" Margin="5" Grid.Column="1" Grid.Row="1">
+                               <ComboBox.ItemTemplate>
+                                   <DataTemplate>
+                                       <TextBlock Text="{Binding}"/>
+                                   </DataTemplate>
+                               </ComboBox.ItemTemplate>
+                           </ComboBox>-->
+
+
+                                    <customComponents:MyTextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Hint="Scan/Search product by name/code" Caption="Referrence number"/>
+                                </Grid>
+
+                                <!--// product listing-->
+                                <Border
+                               Background="Transparent"
+                               CornerRadius="0"  
+                               Padding="10" Margin="5" VerticalAlignment="Top">
+
+                                    <DataGrid ColumnWidth="*"
+                               Background="Transparent"
+                               BorderThickness="0" Height="300">
+
+                                        <DataGrid.ColumnHeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Foreground" Value="#6E6B7B"/>
+                                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                            </Style>
+                                        </DataGrid.ColumnHeaderStyle>
+
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Product" HeaderStringFormat=""/>
+                                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Batch No"/>
+                                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Price"/>
+                                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Quantity"/>
+                                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="SubTotal"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Border>
+
+                            </StackPanel>
+
+                            <!-- Grand total panel -->
+                            <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                                <StackPanel  Margin="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="30"/>
+                                            <!-- <RowDefinition Height="70"/> -->
+                                        </Grid.RowDefinitions>
+
+                                        <!--item-->
+                                        <TextBlock Text="Item" FontSize="18" Grid.Column="0" Grid.Row="0"/>
+                                        <TextBlock Text="0" FontSize="18" Grid.Column="1" Grid.Row="0"/>
+
+                                        <!--total-->
+                                        <TextBlock Text="Total" FontSize="18" Grid.Column="2"  Grid.Row="0"/>
+                                        <TextBlock Text="0.00" FontSize="18" Grid.Column="3"  Grid.Row="0"/>
+
+                                        <!--discount-->
+                                        <TextBlock Text="Discount" FontSize="18" Grid.Column="4"  Grid.Row="0"/>
+                                        <TextBlock Text="0.00" FontSize="18" Grid.Column="5"  Grid.Row="0"/>
+
+                                        <!--coupon-->
+                                        <TextBlock Text="Coupon" FontSize="18" Grid.Column="0" Grid.Row="1"/>
+                                        <TextBlock Text="0" FontSize="18" Grid.Column="1" Grid.Row="1"/>
+
+                                        <!--tax-->
+                                        <TextBlock Text="Tax" FontSize="18" Grid.Column="2"  Grid.Row="1"/>
+                                        <TextBlock Text="0.00" FontSize="18" Grid.Column="3"  Grid.Row="1"/>
+
+                                        <!--discount-->
+                                        <TextBlock Text="Shipping" FontSize="18" Grid.Column="4"  Grid.Row="1"/>
+                                        <TextBlock Text="0.00" FontSize="18" Grid.Column="5"  Grid.Row="1"/>
+                                    </Grid>
+                                </StackPanel>
+                                <StackPanel
+    
+    Background="#D6DEFF"
+    VerticalAlignment="Center"                                    
+>
+
+                                    <TextBlock Text="GRAND TOTAL 0.00" Margin="10"
+               TextAlignment="Center"
+               FontWeight="Medium" FontSize="20" Foreground="#7C5CC4"
+    />
+
+                                </StackPanel>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                    <!--buttons secion-->
+
+                    <Grid Grid.Column="1" Background="Green" Margin="10">
+
+                    </Grid>
+                </Grid>
+                
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"/>
+
+
+            <!--bottom section buttons-->
+            <!--<Grid Grid.Row="1" Background="Orange" VerticalAlignment="Bottom">-->
+                <StackPanel Grid.Row="2" Background="White" MinHeight="80">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+
+                        <Button x:Name="BtnLogin"
+                                Command="{Binding LoginCommand}"
+                                Background="#462AD8"
+                                BorderThickness="0"
+                                FontSize="12"
+                                Content="CASH"
+                                Foreground="White"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                Grid.Column="0"
+                                Margin="0,20,0,0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#462AD8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="8"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="BtnLogin1"
+                                Command="{Binding LoginCommand}"
+                                Background="#00CEC9"
+                                BorderThickness="0"
+                                FontSize="12"
+                                Content="GIFT CARD"
+                                Foreground="White"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                Grid.Column="2"
+                                Margin="0,20,0,0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#462AD8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="8"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="BtnLogin2"
+                                Command="{Binding LoginCommand}"
+                                Background="#D63031"
+                                BorderThickness="0"
+                                FontSize="12"
+                                Content="CANCEL"
+                                Foreground="White"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                Grid.Column="4"
+                                Margin="0,20,0,0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#D63031"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="8"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="BtnLogin3"
+                                Command="{Binding LoginCommand}"
+                                Background="#FFC107"
+                                BorderThickness="0"
+                                FontSize="12"
+                                Content="RECENT TRANSACTION"
+                                Foreground="White"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                Grid.Column="6"
+                                Margin="0,20,0,0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#FFC107"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="8"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="BtnLogin4"
+                                Command="{Binding LoginCommand}"
+                                Background="#E28D02"
+                                BorderThickness="0"
+                                FontSize="12"
+                                Content="DRAFT"
+                                Foreground="White"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                Grid.Column="8"
+                                Margin="0,20,0,0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#E28D02"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="8"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                    
+                </StackPanel>
+            <!--</Grid>-->
+        </Grid>
+   
+    </Border>
 </UserControl>

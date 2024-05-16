@@ -6,6 +6,7 @@
              xmlns:fa='http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp'
              xmlns:uc="clr-namespace:LoginForm.CustomControls"
              xmlns:wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:customComponents="clr-namespace:LoginForm.CustomControls"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Border Background="{StaticResource primaryBackground3}" CornerRadius="10" Padding="10">
@@ -25,25 +26,25 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 
-                <uc:InfoCard Grid.Column="0" Title="Revenue" Number="234,5667" Icon="Signal"
+                <customComponents:InfoCard Grid.Column="0" Title="Revenue" Number="234,5667" Icon="Signal"
                              Background1="#827bff"
                              Background2="#e4bbff"
                              EllipseBackground1="#b298fd"
                              EllipseBackground2="#e4bbff"/>
                 
-                <uc:InfoCard Grid.Column="1" Title="Sale Return" Number="2,349" Icon="Reply"
+                <customComponents:InfoCard Grid.Column="1" Title="Sale Return" Number="2,349" Icon="Reply"
                              Background1="#fd8a87"
                              Background2="#f3ab92"
                              EllipseBackground1="#fbd5a8"
                              EllipseBackground2="#fdb89b"/>
                 
-                <uc:InfoCard Grid.Column="2" Title="Purchase Return" Number="2,349" Icon="Retweet"
+                <customComponents:InfoCard Grid.Column="2" Title="Purchase Return" Number="2,349" Icon="Retweet"
                              Background1="#fd8a87"
                              Background2="#f3ab92"
                              EllipseBackground1="#fbd5a8"
                              EllipseBackground2="#fdb89b"/>
                 
-                <uc:InfoCard Grid.Column="3" Title="Profit" Number="2,349" Icon="Trophy"
+                <customComponents:InfoCard Grid.Column="3" Title="Profit" Number="2,349" Icon="Trophy"
                              Background1="#fd8a87"
                              Background2="#f3ab92"
                              EllipseBackground1="#fbd5a8"

@@ -22,6 +22,7 @@ namespace LoginForm.ViewModels
         // commands
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCustomerViewCommand { get; }
+        public ICommand ShowPOSViewCommand { get; }
 
         public MainViewModel()
         {
@@ -29,10 +30,19 @@ namespace LoginForm.ViewModels
             CurrentUserAccount = new UserAccountModel();
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
+            ShowPOSViewCommand = new ViewModelCommand(ExecuteShowPOSViewCommand);
 
             // default view
-            ExecuteShowHomeViewCommand(null);
+           // ExecuteShowHomeViewCommand(null);
+            ExecuteShowPOSViewCommand(null);
             LoadCurrentUserData();
+        }
+
+        private void ExecuteShowPOSViewCommand(object obj)
+        {
+            CurrentChildView=new POSViewModel();
+            Caption = "POS";
+            Icon = IconChar.ArrowsAlt;
         }
 
         private void ExecuteShowCustomerViewCommand(object obj)
@@ -54,8 +64,8 @@ namespace LoginForm.ViewModels
             var user = _userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
             if (user != null)
             {
-                CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"Welcome {user.Name} {user.LastName} ;)";
+                CurrentUserAccount.Username ="Hassan saava"; //user.Username;
+                CurrentUserAccount.DisplayName ="saava" ;// $"Welcome {user.Name} {user.LastName} ;)";
                 CurrentUserAccount.ProfilePicture = null;
             }
             else

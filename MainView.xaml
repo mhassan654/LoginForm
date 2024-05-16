@@ -23,8 +23,15 @@
             <local:HomeView/>
         </DataTemplate>
 
+        
+        
         <DataTemplate DataType="{x:Type viewModel:CustomerViewModel}">
             <local:CustomerView/>
+        </DataTemplate>
+        
+       
+        <DataTemplate DataType="{x:Type viewModel:POSViewModel}">
+            <local:POSView/>
         </DataTemplate>
     </Window.Resources>
     
@@ -48,11 +55,12 @@
             <!-- navigation menu -->
             <Border CornerRadius="10,0,0,10" Grid.Column="0">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
-                        <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
-                        <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
-                    </LinearGradientBrush>
+                    <SolidColorBrush Color="{StaticResource primaryBackColor4}" />
                 </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" />
+                </Border.Effect>
+
                 
                 <StackPanel>
                     <!-- logo -->
@@ -60,7 +68,7 @@
                                 Height="35"
                                 Margin="15,25,0,40">
                         <Image Source="/Images2/logo.png" Height="30"/>
-                        <TextBlock Text="SAAVATECH"
+                        <TextBlock Text="POINT OF SALES"
                                    Foreground="{StaticResource titleColor2}"
                                    FontSize="20"
                                    FontFamily="Montserat"
@@ -202,20 +210,15 @@
                             <TextBlock Text="Settings" Style="{StaticResource MenuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
-                </StackPanel>
-                
+                </StackPanel>                
               
             </Border>
             
             <!-- main section -->
             <Border CornerRadius="0,10,10,0" Grid.Column="1">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="{StaticResource primaryBackColor3}" Offset="0"/>
-                        <GradientStop Color="{StaticResource primaryBackColor3}" Offset="1"/>
-                    </LinearGradientBrush>
+                    <SolidColorBrush Color="{StaticResource secondaryBackColor3}" />
                 </Border.Background>
-                
                 <Grid>
                     <Grid.RowDefinitions>
                         <!-- control panel -->
@@ -315,19 +318,25 @@
                             
                             <Button Style="{StaticResource IconButtonIcon}"
                                     Tag="{StaticResource color11}">
-                                <fa:IconImage Icon="Clock"
+                                <fa:IconImage Icon="ShoppingBag"
                                               Style="{StaticResource ButtonIcon}"/>
                             </Button>
                             
                             <Button Style="{StaticResource IconButtonIcon}"
                                     Tag="{StaticResource color11}">
-                                <fa:IconImage Icon="Envelope"
+                                <fa:IconImage Icon="Print"
                                               Style="{StaticResource ButtonIcon}"/>
                             </Button>
-                            
+
                             <Button Style="{StaticResource IconButtonIcon}"
-                                    Tag="{StaticResource color11}">
-                                <fa:IconImage Icon="Bell"
+        Tag="{StaticResource color11}">
+                                <fa:IconImage Icon="Cog"
+                  Style="{StaticResource ButtonIcon}"/>
+                            </Button>
+
+                            <Button Style="{StaticResource IconButtonIcon}"
+                                    Tag="{StaticResource color11}" Command="{Binding ShowPOSViewCommand}">
+                                <fa:IconImage Icon="ArrowsAlt"
                                               Style="{StaticResource ButtonIcon}"/>
                             </Button>
                         </StackPanel>
@@ -336,7 +345,7 @@
                     <!-- content section / child views -->
                     <ContentControl Content="{Binding CurrentChildView}"
                                     Grid.Row="2"
-                                    Margin="24"/>
+                                    Margin="4"/>
                 </Grid>
             </Border>
         </Grid>

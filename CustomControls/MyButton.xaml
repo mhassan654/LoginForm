@@ -6,24 +6,24 @@
              xmlns:fa='http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp'
              xmlns:local="clr-namespace:LoginForm.CustomControls"
              mc:Ignorable="d"
-             Name="CustomButton" Width="316" Height="100" Background="Transparent"
+             Name="CustomButton" Width="200" Height="60" Background="Transparent"
            >
-    <Border Margin="0,0,25,0">
+    <Border Margin="0,0,25,0" Width="140" Padding="0" CornerRadius="10">
         <Border.Background>
-            <SolidColorBrush Color="{Binding Path=BackgroundColor, ElementName=MyButton}"/>
+            <SolidColorBrush Color="{Binding Path=BackgroundColor, ElementName=CustomButton}"/>
         </Border.Background>
         
-        <Border.Clip>
-            <RectangleGeometry RadiusX="6" RadiusY="6" Rect="0,0,291,140"/>
-        </Border.Clip>
+        <!--<Border.Clip>
+            <RectangleGeometry RadiusX="9" RadiusY="9" Rect="0,0,291,140"/>
+        </Border.Clip>-->
         
         <Grid>
  
-            <fa:IconImage Icon="{Binding Path=Icon, ElementName=CustomButton}" Margin="0 0 25 25" Width="60" Height="60"
-                          Foreground="White" HorizontalAlignment="Right"
+            <fa:IconImage Icon="{Binding Path=Icon, ElementName=CustomButton}" Margin="10" Width="28" Height="28"
+                          Foreground="White" HorizontalAlignment="Left"
                           VerticalAlignment="Center"/>
             
-            <StackPanel Margin="35 0 0 20" VerticalAlignment="Bottom">
+            <StackPanel Margin="5,8"  HorizontalAlignment="Right" VerticalAlignment="Center">
                 <TextBlock Text="{Binding Path=Title, ElementName=CustomButton}" Foreground="#E9E9E9E9" FontSize="25"
                            FontFamily="Montserrat"/>
             </StackPanel>

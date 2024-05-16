@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\LEARNING CENTER\C#\LoginForm\App.xaml
-11-1476205060
+191693799649
 1-600760770
-271740978748
-13206546319
-CustomControls\BindablePasswordBox.xaml;CustomControls\InfoCard.xaml;MainView.xaml;MainWindow.xaml;Styles\Buttons.xaml;Styles\UIColors.xaml;Views\CustomerView.xaml;Views\FinancesView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\SettingsView.xaml;
+321248337610
+151833907017
+CustomControls\BindablePasswordBox.xaml;CustomControls\InfoCard.xaml;CustomControls\MyButton.xaml;CustomControls\MyTextBox.xaml;MainView.xaml;MainWindow.xaml;Styles\Buttons.xaml;Styles\ComboBoxStyle.xaml;Styles\CustomComboxStyle.xaml;Styles\TextBoxes.xaml;Styles\Texts.xaml;Styles\UIColors.xaml;Views\CustomerView.xaml;Views\DatePicker.xaml;Views\FinancesView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\POSView.xaml;Views\SettingsView.xaml;
 
 True
 
