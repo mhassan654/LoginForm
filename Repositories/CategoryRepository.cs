@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LoginForm.Repositories
 {
-    public class CategoryRepository : RepositoryBase, ICategory
+    public class CategoryRepository : BaseRepository, ICategoryRepository
     {
         public void Add(CategoryModel categoryModel)
         {
@@ -19,9 +19,26 @@ namespace LoginForm.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<CategoryModel> GetByAll()
+        public List<CategoryModel> GetByAll()
         {
-            throw new NotImplementedException();
+            // try
+            // {
+                DataContext.Categories.ToList();
+            
+                List<CategoryModel> categories = [];
+                if (categories == null) throw new ArgumentNullException(nameof(categories));
+
+                var list = categories.Select(category => category).ToList();
+                Console.WriteLine(string.Join(", ", list)); 
+                return list;
+            // }
+            // catch (Exception e)
+            // {
+            //     Console.WriteLine(e.ToString());
+            //     // throw;
+            // }
+            
+          
         }
 
         public CategoryModel GetById(int id)

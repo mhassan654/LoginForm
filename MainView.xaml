@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:materialDesign="https://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LoginForm.Views"
         xmlns:viewModel="clr-namespace:LoginForm.ViewModels"
         mc:Ignorable="d" 
@@ -33,6 +34,10 @@
         <DataTemplate DataType="{x:Type viewModel:POSViewModel}">
             <local:POSView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:CategoryViewModel}">
+            <local:CategoriesView/>
+        </DataTemplate>
     </Window.Resources>
     
     <Border CornerRadius="10"
@@ -55,7 +60,7 @@
             <!-- navigation menu -->
             <Border CornerRadius="10,0,0,10" Grid.Column="0">
                 <Border.Background>
-                    <SolidColorBrush Color="{StaticResource primaryBackColor4}" />
+                    <SolidColorBrush Color="{StaticResource primaryBackColor2}" />
                 </Border.Background>
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="2" />
@@ -116,6 +121,7 @@
                     <!-- sale -->
                     <RadioButton 
                         Style="{StaticResource MenuButton}" 
+                        Command="{Binding ShowCategoriesViewCommand}"
                         Tag="{StaticResource color3}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}"/>
@@ -343,9 +349,9 @@
                     </Grid>
                     
                     <!-- content section / child views -->
-                    <ContentControl Content="{Binding CurrentChildView}"
+                    <ContentControl Content="{Binding CurrentChildView}" Background="WhiteSmoke"
                                     Grid.Row="2"
-                                    Margin="4"/>
+                                    Margin="20"/>
                 </Grid>
             </Border>
         </Grid>

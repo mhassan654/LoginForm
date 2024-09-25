@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,6 +16,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LoginForm.Models;
+using LoginForm.ViewModels;
+using LoginForm.Views.Modals;
+using MaterialDesignThemes.Wpf;
 
 namespace LoginForm.Views
 {
@@ -25,6 +30,7 @@ namespace LoginForm.Views
     {
         SqlConnection conn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
+        CategoryViewModel viewModel = new CategoryViewModel();
 
         public CategoriesView()
         {
@@ -41,25 +47,77 @@ namespace LoginForm.Views
 
         private void GetData()
         {
-            MyConn();
-            DataTable dt = new DataTable();
-            cmd = new SqlCommand("SELECT * FROM Categories", conn)
-            {
-                CommandType = CommandType.Text
-            };
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            var list = viewModel.GetAll;
 
-            if (dt != null && dt.Rows.Count > 0)
+            MyConn();           
+            string query = "SELECT * FROM Categories";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+
+            using (adapter)
             {
-                dgCategories.ItemsSource = dt.DefaultView;
+                DataTable categoriesTable = new();
+                adapter.Fill(categoriesTable);
+
+                // dgCategories.DisplayMemberPath = "Name";
+                // dgCategories.SelectedValuePath = "Id";
+                //
+                // dgCategories.ItemsSource = categoriesTable.Rows.Count > 0 ? categoriesTable.DefaultView : null;
             }
-            else
+            // cmd = new SqlCommand(query, conn);
+            //{
+            //    CommandType = CommandType.Text
+            //};
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.Fill(dt);
+
+
+
+            //conn.Close();
+        }
+
+        private void CreateNewCategory_OnClick(object sender, RoutedEventArgs e)
+        {
+            CreateCategory createCategory = new CreateCategory();
+            bool? result = createCategory.ShowDialog();
+            if (result==true)
             {
-                dgCategories.ItemsSource = null;
+     
+     
+            }
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("ready to edit");
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    // var selected = dgCategories.SelectedValue;
+                    MessageBox.Show("deleted");
+                }
+                else
+                {
+                    MessageBox.Show("canceled");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
 
-            conn.Close();
+
+
+        }
+
+        private void dgCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("selected");
         }
     }
 }

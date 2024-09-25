@@ -6,7 +6,7 @@ using LoginForm.Models;
 
 namespace LoginForm.Repositories
 {
-    public class UserRepository: RepositoryBase, IUserRepository
+    public class UserRepository: BaseRepository, IUserRepository
     {
         public bool AuthenticateUser(NetworkCredential credential)
         {

@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:uc="clr-namespace:LoginForm.CustomControls"
              xmlns:local="clr-namespace:LoginForm.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1000">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -23,6 +25,81 @@
                 <StackPanel Orientation="Horizontal"
 VerticalAlignment="Top" 
 Grid.Column="0">
+                    <StackPanel Grid.Column="1"  Orientation="Horizontal"
+                                 FlowDirection="RightToLeft"
+                                 VerticalAlignment="Center">
+
+                        <Button 
+                                Click="CreateNewCategory_OnClick"                        
+                                Content="Import Category"                            
+                                FontSize="12"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                BorderThickness="0"
+                                Foreground="White"
+                                VerticalAlignment="Top" Margin="10 0">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#773DFF"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Height="30"
+                                                        CornerRadius="4"
+                                                        Background="{TemplateBinding Background}">
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#836EFB"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <Button 
+        Click="CreateNewCategory_OnClick"                        
+        Content="Add Category"                            
+        FontSize="12"
+        FontFamily="Montserrat"
+        Cursor="Hand"
+        BorderThickness="0"
+        Foreground="White"
+        VerticalAlignment="Top">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#773DFF"/>
+                                    <Setter Property="Padding" Value="10 10"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Height="30"
+                                CornerRadius="4"
+                                Background="{TemplateBinding Background}">
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#836EFB"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
 
                     <!--<fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>-->
 
@@ -52,7 +129,7 @@ Grid.Column="0">
 
 
                 <Button Grid.Column="1"
-                    Command="{Binding LoginCommand}"                            
+                   Click="CreateNewCategory_OnClick"                        
                     Content="Add Category"                            
                     FontSize="12"
                     FontFamily="Montserrat"
@@ -88,47 +165,50 @@ Grid.Column="0">
             </Grid>
 
             <Border Grid.Row="1"
-        Background="{StaticResource primaryBackground2}"
-        CornerRadius="10" 
+        Background="{StaticResource primaryBackground5}"
+        CornerRadius="0" 
         Padding="10">
 
-                <DataGrid ColumnWidth="*" Name="dgCategories" Width="auto" AutoGenerateColumns="False"
-                          VerticalScrollBarVisibility="Auto" 
-          Background="{StaticResource primaryBackground4}"
-          BorderThickness="1">
+                
+                <DockPanel>
 
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="White"/>
-                            <Setter Property="Foreground" Value="Black"/>
-                            <Setter Property="Padding" Value="10,0,0,10"/>
-                            <Setter Property="FontFamily" Value="Montserrat"/>
-                            <Setter Property="FontSize" Value="15"/>
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
+                    <!-- Sidebar -->
+                    <StackPanel DockPanel.Dock="Left" Width="200" Background="#2C3E50">
 
-                    <DataGrid.Columns>
-                        <DataGridCheckBoxColumn CanUserResize="False" Width="auto">
-                            <DataGridCheckBoxColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <CheckBox/>
-                                </DataTemplate>
-                            </DataGridCheckBoxColumn.HeaderTemplate>
-                            
-                        </DataGridCheckBoxColumn>
-                        <DataGridTextColumn
-                            x:Name="Id"
-                            Binding="{Binding Path=Id}" 
-                            Header="ID" 
-                            HeaderStringFormat=""/>
-                        <DataGridTextColumn  x:Name="Image" Binding="{Binding Path=Image}" ClipboardContentBinding="{x:Null}" Header="Image"/>
-                        <DataGridTextColumn Binding="{Binding Path=Name}" ClipboardContentBinding="{x:Null}" Header="Name"/>
-                        <DataGridTextColumn Binding="{Binding Path=ParentId}" ClipboardContentBinding="{x:Null}" Header="Parent Category"/>
-                        <DataGridTextColumn Binding="{Binding Path=IsActvie}" ClipboardContentBinding="{x:Null}" Header="Is Active"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Date"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Action"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                        <!-- Sidebar Header -->
+                        <TextBlock Text="Sidebar" FontSize="20" Foreground="White" Padding="10" />
+
+                        <!-- Expander for First Dropdown -->
+                        <Expander Header="Menu 1" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
+                            <StackPanel>
+                                <Button Content="Sub Menu 1.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                                <Button Content="Sub Menu 1.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                            </StackPanel>
+                        </Expander>
+
+                        <!-- Expander for Second Dropdown -->
+                        <Expander Header="Menu 2" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
+                            <StackPanel>
+                                <Button Content="Sub Menu 2.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                                <Button Content="Sub Menu 2.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                            </StackPanel>
+                        </Expander>
+
+                        <!-- Expander for Third Dropdown -->
+                        <Expander Header="Menu 3" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
+                            <StackPanel>
+                                <Button Content="Sub Menu 3.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                                <Button Content="Sub Menu 3.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+
+                    <!-- Main Content Area -->
+                    <Grid Background="White">
+                        <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                    </Grid>
+
+                </DockPanel>
             </Border>
 
         </Grid>

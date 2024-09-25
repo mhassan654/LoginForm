@@ -24,7 +24,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Border Background="White" Grid.Column="0" Height="700" MinHeight="600" CornerRadius="12" Margin="10">
+                    <Border Background="White" Grid.Column="0" Height="700" MinHeight="500" CornerRadius="12" Margin="10">
                         <Grid >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -50,6 +50,7 @@
                                     <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="2" Grid.Row="0"/>
                                     <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="0" Grid.Row="1"/>
                                     <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="1" Grid.Row="1"/>
+                                    
 
 
                                     <!--<ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" Grid.Column="0" Grid.Row="1" Margin="0,4"/>-->
@@ -118,7 +119,7 @@
                                         </Grid.RowDefinitions>
 
                                         <!--item-->
-                                        <TextBlock Text="Item" FontSize="18" Grid.Column="0" Grid.Row="0"/>
+                                        <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="Item" FontSize="18" Grid.Column="0" Grid.Row="0"/>
                                         <TextBlock Text="0" FontSize="18" Grid.Column="1" Grid.Row="0"/>
 
                                         <!--total-->
@@ -186,11 +187,11 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Grid.RowDefinitions>
+                        <!--<Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                        </Grid.RowDefinitions>-->
                         
-
+                        
                         <Button x:Name="BtnLogin"
                                 Command="{Binding LoginCommand}"
                                 Background="#462AD8"

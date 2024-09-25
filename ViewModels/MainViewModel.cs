@@ -23,6 +23,7 @@ namespace LoginForm.ViewModels
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCustomerViewCommand { get; }
         public ICommand ShowPOSViewCommand { get; }
+        public ICommand ShowCategoriesViewCommand { get; }
 
         public MainViewModel()
         {
@@ -31,11 +32,19 @@ namespace LoginForm.ViewModels
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
             ShowPOSViewCommand = new ViewModelCommand(ExecuteShowPOSViewCommand);
+            ShowCategoriesViewCommand = new ViewModelCommand(ExecuteShowCategoriesViewCommand);
 
             // default view
            // ExecuteShowHomeViewCommand(null);
             ExecuteShowPOSViewCommand(null);
             LoadCurrentUserData();
+        }
+
+        private void ExecuteShowCategoriesViewCommand(object obj)
+        {
+            CurrentChildView=new CategoryViewModel();
+            Caption = "Categories";
+            Icon = IconChar.CakeCandles;
         }
 
         private void ExecuteShowPOSViewCommand(object obj)

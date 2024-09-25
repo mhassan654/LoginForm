@@ -10,11 +10,11 @@
         <BooleanToVisibilityConverter x:Key="boolToVis"/>
     </UserControl.Resources>
     <StackPanel Margin="6 4">
-        <!--<TextBlock Text="{Binding ElementName=myTextbox,
+        <TextBlock Text="{Binding ElementName=myTextBox,
          Path=Caption}" 
                    Foreground="#97a5b4"
                    FontSize="13" 
-                   Margin="0 0 0 8"/>-->
+                   Margin="0 0 0 8"/>
         <Grid>
             <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686"
                        IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14" 

@@ -4,9 +4,113 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:LoginForm.Views.Modals"
-        mc:Ignorable="d"
-        Title="CreateCategory" Height="450" Width="800">
+        xmlns:viewModel="clr-namespace:LoginForm.ViewModels"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:uc="clr-namespace:LoginForm.CustomControls"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="CreateCategory" WindowStyle="None" Height="350" Width="650" ResizeMode="NoResize">
+    <Window.DataContext>
+        <viewModel:CategoryViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Background="{StaticResource primaryBackground1}" Margin="0">
+            <TextBlock Text="Add New Category" Margin="10" FontSize="20" FontWeight="ExtraBold" Foreground="{StaticResource titleColor2}"/>
+        </StackPanel>
+
+        <!-- close button -->
+        <StackPanel x:Name="pnlControlPanel"
+                 Grid.Row="0" 
+                 Height="30"
+                 HorizontalAlignment="Right"
+                 Orientation="Horizontal"
+                 FlowDirection="RightToLeft"
+                 VerticalAlignment="Top"
+                 Background="Transparent"
+                 Cursor="Hand"
+                 Margin="0,10,10,10"
+                 MouseLeftButtonDown="PnlControlPanel_OnMouseLeftButtonDown"
+                 >
+
+            <!-- define close button for the window -->
+            <Button x:Name="btnClose" Background="Red"
+                 Style="{StaticResource ControlButton}"
+                 Tag="White"
+                 Click="BtnClose_OnClick">
+                <fa:IconImage Icon="Xmark" Style="{StaticResource ControlBarButtonIcon}"/>
+            </Button>
+        </StackPanel>
+
+        <!-- main content -->
+
+        <Border CornerRadius="7" Background="#F7F7F7" Grid.Row="1">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="5" Direction="-130" Opacity="0.1"/>
+            </Border.Effect>
+
+            <Grid Margin="20 0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <!-- form titles -->
+                <!-- <StackPanel> -->
+
+                <!--<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Height="40" Width="800" Margin="0,0">-->
+                <Label Grid.Column="0" Height="40" Width="100" Content="Name" Margin="0 0 0 0"  HorizontalAlignment="Left"
+                           VerticalAlignment="Bottom" Foreground="Black" FontSize="20"/>
+
+                <Label Grid.Column="1" Height="40" Width="250" Content="Parent Category" Margin="10,0,0,0"  HorizontalAlignment="Left"
+                           VerticalAlignment="Center" Foreground="Black" FontSize="20"/>
+                <!--</StackPanel>-->
+
+                <!--<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Height="40" Width="500" 
+                            VerticalAlignment="Top" Margin="0,10,0,0">-->
+
+                <TextBox Grid.Column="0" Grid.Row="1" Name="txtName" Width="252" Height="40" FontSize="18" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                             VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding CategoryErrorMessage}"
+       Foreground="#D7596D"
+       FontSize="13"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="0,10,0,0"
+           TextWrapping="Wrap"/>
+
+                <!--<TextBox  Grid.Column="1" Grid.Row="1"  Name="txtCurrencyName" Width="295" Height="40" Margin="10,0,0,0" FontSize="18" HorizontalAlignment="Left"
+                             VerticalContentAlignment="Center" MaxLength="50" CharacterCasing="Upper"/>-->
+
+                <ComboBox  Grid.Column="1" Grid.Row="1" Name="parentCategory" Width="285" Height="40" FontSize="18" 
+                              VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
+                          MaxDropDownHeight="150"/>
+                <!--</StackPanel>-->
+
+                <Button Grid.Column="0" Click="BtnLoadFromFile_Click"  Grid.Row="2" Content="Choose Image" Height="50" Width="150"  Background="LightCoral" 
+         Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}"/>
+                <Image Grid.Column="1" Grid.Row="2" x:Name="imagePicture" Margin="10" Height="400" Width="auto"/>
+
+                <!-- </StackPanel> -->
+
+                <WrapPanel  Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button Click="BtnSave_Click" Content="Submit" Height="50" Width="150"  Background="Blue" 
+                            Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}"/>
+                    <Button Content="Cancel" Click="Cancel_Click" Height="50" Width="150" FontSize="20" Style="{StaticResource ButtonRound}"/>
+                </WrapPanel>
+            </Grid>
+        </Border>
+
     </Grid>
 </Window>
