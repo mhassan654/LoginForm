@@ -51,5 +51,38 @@ namespace LoginForm
         {
             this.WindowState = WindowState.Minimized;
         }
+        
+        // Handle the Checked event (Sidebar Expanded)
+        // private void SidebarToggleButton_Checked(object sender, RoutedEventArgs e)
+        // {
+        //     Sidebar.Visibility = Visibility.Visible;
+        // }
+        //
+        // // Handle the Unchecked event (Sidebar Collapsed)
+        // private void SidebarToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        // {
+        //     Sidebar.Visibility = Visibility.Collapsed;
+        // }
+        private void SidebarToggleButton_OnChecked(object sender, RoutedEventArgs e)
+        {
+            if (Sidebar != null)  // Null check to prevent exceptions
+            {
+                Sidebar.Visibility = Visibility.Visible;
+                // Expand the sidebar to its original width (250 in this case)
+                SidebarColumn.Width = new GridLength(250);
+                MainContentColumn.Width = new GridLength(1, GridUnitType.Star); // Main content adjusts to remaining space
+            }
+        }
+
+        private void SidebarToggleButton_OnUnchecked(object sender, RoutedEventArgs e)
+        {
+            if (Sidebar != null)  // Null check to prevent exceptions
+            {
+                Sidebar.Visibility = Visibility.Collapsed;
+                // Collapse the sidebar by setting its width to 0
+                SidebarColumn.Width = new GridLength(0);
+                MainContentColumn.Width = new GridLength(1, GridUnitType.Star); // Main content takes full width
+            }
+        }
     }
 }

@@ -169,46 +169,74 @@ Grid.Column="0">
         CornerRadius="0" 
         Padding="10">
 
+                <DataGrid ColumnWidth="*" Name="dgCategories" Width="auto" AutoGenerateColumns="False"
+                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" ItemsSource=""
+          Background="{StaticResource primaryBackground4}"
+          BorderThickness="1" RowHeight="30" FontSize="16" SelectionChanged="dgCategories_SelectionChanged">
+                    <DataGrid.RowStyle>
+                        <Style/>
+                    </DataGrid.RowStyle>
+
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="{StaticResource primaryBackground5}"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Padding" Value="10,0,0,10"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.Columns >
+                        <DataGridCheckBoxColumn CanUserResize="False" Width="auto">
+                            <DataGridCheckBoxColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <CheckBox/>
+                                </DataTemplate>
+                            </DataGridCheckBoxColumn.HeaderTemplate>
+                            
+                        </DataGridCheckBoxColumn>
+                        <DataGridTextColumn
+                            x:Name="Id"
+                            Binding="{Binding Path=Id}" 
+                            Header="#ID" Width="50"
+                            HeaderStringFormat=""/>
+                        <DataGridTextColumn IsReadOnly="True"   x:Name="Image" Binding="{Binding Path=Image}" ClipboardContentBinding="{x:Null}" Header="Image"/>
+                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}" ClipboardContentBinding="{x:Null}" Header="Category"/>
+                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ParentId}" ClipboardContentBinding="{x:Null}" Header="Parent Category"/>
+                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=NumberOfProducts}" ClipboardContentBinding="{x:Null}" Header="Number Of Products"/>
+                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=StockQuantity}" Width="150" ClipboardContentBinding="{x:Null}" Header="Stock Quantity"/>
+                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=StockWorth}" ClipboardContentBinding="{x:Null}" Header="Stock Worth(Price/Cost)"/>
+                        <DataGridTemplateColumn Header="Action" Width="100" IsReadOnly="True" DisplayIndex="8">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Button Click="Edit_Click" Background="SkyBlue" >
+                                            <Button.Content>
+                                                <StackPanel>
+                                                    <Image Source="/Images2/edit-button.png" ToolTip="Edit" Width="25" Height="25" x:Name="Revise" Cursor="Hand"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+
+                                        <Button Click="Delete_Click" Background="red" >
+                                            <Button.Content>
+                                                <StackPanel>
+                                                    <Image Source="/Images2/trash-button.png" ToolTip="Delete" Width="25" Height="25" x:Name="Delete" Margin="12,0" Cursor="Hand"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+
+                                        
+                                    </WrapPanel>
+                                 
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
                 
-                <DockPanel>
-
-                    <!-- Sidebar -->
-                    <StackPanel DockPanel.Dock="Left" Width="200" Background="#2C3E50">
-
-                        <!-- Sidebar Header -->
-                        <TextBlock Text="Sidebar" FontSize="20" Foreground="White" Padding="10" />
-
-                        <!-- Expander for First Dropdown -->
-                        <Expander Header="Menu 1" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
-                            <StackPanel>
-                                <Button Content="Sub Menu 1.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
-                                <Button Content="Sub Menu 1.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
-                            </StackPanel>
-                        </Expander>
-
-                        <!-- Expander for Second Dropdown -->
-                        <Expander Header="Menu 2" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
-                            <StackPanel>
-                                <Button Content="Sub Menu 2.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
-                                <Button Content="Sub Menu 2.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
-                            </StackPanel>
-                        </Expander>
-
-                        <!-- Expander for Third Dropdown -->
-                        <Expander Header="Menu 3" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
-                            <StackPanel>
-                                <Button Content="Sub Menu 3.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
-                                <Button Content="Sub Menu 3.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
-                            </StackPanel>
-                        </Expander>
-                    </StackPanel>
-
-                    <!-- Main Content Area -->
-                    <Grid Background="White">
-                        <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
-                    </Grid>
-
-                </DockPanel>
+                
             </Border>
 
         </Grid>

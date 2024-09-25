@@ -49,182 +49,83 @@
                 <GradientStop Color="{StaticResource winBorderColor3}" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
-        
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <!-- Navigation menue -->
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="* "/>
-            </Grid.ColumnDefinitions>
-            
-            <!-- navigation menu -->
-            <Border CornerRadius="10,0,0,10" Grid.Column="0">
-                <Border.Background>
-                    <SolidColorBrush Color="{StaticResource primaryBackColor2}" />
-                </Border.Background>
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="2" />
-                </Border.Effect>
-
+             <DockPanel >
                 
-                <StackPanel>
-                    <!-- logo -->
-                    <StackPanel Orientation="Horizontal"
-                                Height="35"
-                                Margin="15,25,0,40">
-                        <Image Source="/Images2/logo.png" Height="30"/>
-                        <TextBlock Text="POINT OF SALES"
-                                   Foreground="{StaticResource titleColor2}"
-                                   FontSize="20"
-                                   FontFamily="Montserat"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"
-                                   Margin="10,0,0,0"/>
+                 <Grid>
+                 <Grid.ColumnDefinitions>
+                     <!-- Navigation menue -->
+                     <ColumnDefinition x:Name="SidebarColumn" Width="250"/>
+                     <ColumnDefinition  x:Name="MainContentColumn" Width="* "/>
+                 </Grid.ColumnDefinitions>
+                    <!-- Sidebar -->
+                    <StackPanel x:Name="Sidebar" Grid.Column="0" DockPanel.Dock="Left"  Background="#2C3E50" Visibility="Visible">
+
+                        <!-- Sidebar Header -->
+                        <!-- <TextBlock Text="Sidebar" FontSize="20" Foreground="White" Padding="10" /> -->
+                        <StackPanel Orientation="Horizontal"
+                                    Height="35"
+                                    Margin="15,25,0,40" >
+                            <Image Source="/Images2/logo.png" Height="30"/>
+                            <TextBlock Text="POINT OF SALES"
+                                       Foreground="{StaticResource titleColor2}"
+                                       FontSize="20"
+                                       FontFamily="Montserat"
+                                       FontWeight="Medium"
+                                       VerticalAlignment="Center"
+                                       Margin="10,0,0,0"/>
+                        </StackPanel>
+
+                        <!-- Expander for First Dropdown -->
+                        <!-- <Expander Header="Menu 1" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5"> -->
+                        <!--     <StackPanel> -->
+                        <!--         <Button Content="Sub Menu 1.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/> -->
+                        <!--         <Button Content="Sub Menu 1.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/> -->
+                        <!--     </StackPanel> -->
+                        <!-- </Expander> -->
+                        <!-- Expander with Custom Icon -->
+                        <Expander IsExpanded="True" Background="#34495E" Foreground="White" FontSize="16" Padding="5" Margin="0 0 0 5">
+                            <Expander.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <!-- Icon -->
+                                        <Image Source="/Images2/trash-button.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                                        <!-- Header Text -->
+                                        <TextBlock Text="Menu 1"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Expander.HeaderTemplate>
+
+                            <StackPanel>
+                                <Button Content="Sub Menu 1.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                                <Button Content="Sub Menu 1.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                            </StackPanel>
+                        </Expander>
+
+                        <!-- Expander for Second Dropdown -->
+                        <Expander Header="Menu 2" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
+                            <StackPanel>
+                                <Button Content="Sub Menu 2.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                                <Button Content="Sub Menu 2.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                            </StackPanel>
+                        </Expander>
+
+                        <!-- Expander for Third Dropdown -->
+                        <Expander Header="Menu 3" Foreground="White" Background="#34495E" FontSize="16" Padding="5" Margin="0 0 0 5">
+                            <StackPanel>
+                                <Button Content="Sub Menu 3.1" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                                <Button Content="Sub Menu 3.2" Padding="10" Background="#3B5998" Foreground="White" Margin="5"/>
+                            </StackPanel>
+                        </Expander>
                     </StackPanel>
-                    
-                    <!-- menu buttons -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}"
-                        IsChecked="True"
-                        Command="{Binding ShowHomeViewCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Home" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Dashboard" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <!-- product -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}"
-                        Command="{Binding ShowCustomerViewCommand}">
-                        
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Users" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Product" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                        
-                    </RadioButton>
-                    
-                    <!-- purchase -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}"
-                        Command="{Binding ShowCustomerViewCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="CreditCard" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Purchase" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <!-- sale -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Command="{Binding ShowCategoriesViewCommand}"
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Sale" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <!-- expenses -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Wallet" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Expense" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="FileAlt" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Quotation" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Share" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Transfer" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Reply" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Return" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Briefcase" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Accounting" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <!-- //hrm -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Users" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="HRM" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <!-- people -->
-                    
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="User" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="People" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    
-                    <!-- reports -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="File" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Reports" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <!-- settings -->
-                    <RadioButton 
-                        Style="{StaticResource MenuButton}" 
-                        Tag="{StaticResource color3}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Cog" Style="{StaticResource MenuButtonIcon}"/>
-                            <TextBlock Text="Settings" Style="{StaticResource MenuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                </StackPanel>                
-              
-            </Border>
-            
-            <!-- main section -->
-            <Border CornerRadius="0,10,10,0" Grid.Column="1">
+
+                    <!-- Main Content Area -->
+                    <Grid x:Name="MainContent" Grid.Column="1" Background="White">
+                        <!-- <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/> -->
+                         <Border CornerRadius="0,10,10,0">
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource secondaryBackColor3}" />
                 </Border.Background>
+                             
                 <Grid>
                     <Grid.RowDefinitions>
                         <!-- control panel -->
@@ -246,6 +147,10 @@
                                 Margin="0,0,5,0"
                                 MouseLeftButtonDown="PnlControlPanel_OnMouseLeftButtonDown"
                                 MouseEnter="PnlControlPanel_OnMouseEnter">
+                        <!-- Toggle Button to Collapse/Expand Sidebar -->
+                        <ToggleButton x:Name="SidebarToggleButton" Width="30" Height="30" DockPanel.Dock="Left" 
+                                      Content="☰" FontSize="16" Background="LightGray" 
+                                      IsChecked="True" Checked="SidebarToggleButton_OnChecked" Unchecked="SidebarToggleButton_OnUnchecked"/>
                         
                         <!-- define close button for the window -->
                         <Button x:Name="btnClose"
@@ -354,6 +259,10 @@
                                     Margin="20"/>
                 </Grid>
             </Border>
-        </Grid>
+                    </Grid>
+                 </Grid>
+                </DockPanel>
+           
+       
         </Border>
 </Window>

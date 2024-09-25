@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LoginForm.exe" size="1004968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LoginForm.exe" size="1006504">
       <assemblyIdentity name="LoginForm" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PNnhdUYyDvzWYrA/IVu2nHgBg0uPIKwygrrhgnLEgS4=</dsig:DigestValue>
+        <dsig:DigestValue>5Tsz4zgDeRgIjEOUTS3Ixyb4lF0l3x4jHJn9BBfShNQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
